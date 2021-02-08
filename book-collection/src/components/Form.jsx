@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import noImage from './image-not-available.jpg';
 
 const Form = (props) => {
 
@@ -32,6 +33,8 @@ const Form = (props) => {
       },
       body: JSON.stringify(newBook)
     })
+
+   document.querySelector(".form-fields").reset();
   }
 
   return (
@@ -39,14 +42,14 @@ const Form = (props) => {
       <section>
         <h1>Add a new book</h1>
         <div>
-          <form>
+          <form className="form-fields">
             <input type="text" placeholder="Book Name" required onChange={(e) => { setName(e.target.value) }} />
             <input type="text" placeholder="Author Name" required onChange={(e) => { setAuthor(e.target.value) }} />
             <input type="text" placeholder="Release Year" required onChange={(e) => { setRelease(e.target.value) }} />
             <input type="text" placeholder="Cover URL" onChange={(e) => { setCover(e.target.value) }} />
             <input type="text" placeholder="More info URL" required onChange={(e) => { setInfo(e.target.value) }} />
             <select type="text" required onChange={(e) => { setPhoto(e.target.value) }}>
-              <option value="" disabled selected hidden>Submitted by:</option>
+              <option value={noImage} >Submitted by:</option>
               <option value="https://www.pngkey.com/png/detail/446-4462649_animated-faces-my-hero-design-clip-art-woman.png">User-1</option>
               <option value="https://diamond-lifts.com/wp-content/uploads/2018/12/65de655460ad0c9bff6af468b33892a4.jpg">User-2</option>
               <option value="https://www.pngitem.com/pimgs/m/75-758538_straight-face-smiling-face-woman-face-animation-hd.png">User-3</option>
