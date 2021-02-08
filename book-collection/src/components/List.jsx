@@ -1,23 +1,26 @@
 import React from 'react';
 
-const List = () => {
+const List = (props) => {
+
+  const {book, id} = props;
+
   return (
-    <li>
+    <li key={id}>
       <div className="container">
         <div className="cover">
-          <img src="https://upload.wikimedia.org/wikipedia/en/0/04/HauntingOfHillHouse.JPG" alt="Book cover" />
+          <img src={book.cover} alt="Book cover" />
         </div>
         <div className="details">
           <div className="vote">
-            <i className="fas fa-caret-up"><b>2</b></i>
+            <i className="fas fa-caret-up"><b>{book.vote}</b></i>
           </div>
           <div className="info">
-            <div className="title"><a href="https://en.wikipedia.org/wiki/The_Haunting_of_Hill_House">The Haunting of Hill House</a></div>
-            <div className="publish">Gothic fiction, psychological horror, 1959</div>
+            <div className="title"><a href={book.info}>{book.name}</a></div>
+            <div className="publish">{book.genre},{book.release}</div>
           </div>
           <div className="submission">
             <p>Submitted by:</p>
-            <img src="https://upload.wikimedia.org/wikipedia/en/4/43/ShirleyJack.jpg" alt="Uploader image" />
+            <img src={book.photo} alt="Uploader image" />
           </div>
         </div>
         <div className="delete">
@@ -25,7 +28,7 @@ const List = () => {
         </div>
       </div>
     </li>
-  );
+  )
 }
 
 
