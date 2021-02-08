@@ -2,17 +2,17 @@
   "books": [
     {
       "name": "Ulysses",
-      "genre": "Modernist novel",
+      "author": "James Joyce",
       "release": 1922,
       "vote": 1,
       "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/JoyceUlysses2.jpg/330px-JoyceUlysses2.jpg",
       "info": "https://en.wikipedia.org/wiki/Ulysses_(novel)",
-      "photo": "https://www.pngkey.com/png/detail/446-4462649_animated-faces-my-hero-design-clip-art-woman.png",
+      "photo": "https://www.pngitem.com/pimgs/m/75-758538_straight-face-smiling-face-woman-face-animation-hd.png",
       "id": 1
     },
     {
       "name": "The Haunting of Hill House",
-      "genre": "Gothic fiction, psychological horror",
+      "author": "Shirley Jackson",
       "release": 1959,
       "vote": 2,
       "cover": "https://upload.wikimedia.org/wikipedia/en/0/04/HauntingOfHillHouse.JPG",
@@ -22,23 +22,33 @@
     },
     {
       "name": "Hamlet",
-      "genre": "Shakespearean tragedy",
+      "author": "William Shakespeare",
       "release": 1603,
       "vote": 3,
-      "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Edwin_Booth_Hamlet_1870.jpg",
+      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Edwin_Booth_Hamlet_1870.jpg/330px-Edwin_Booth_Hamlet_1870.jpg",
       "info": "https://en.wikipedia.org/wiki/Hamlet",
-      "photo": "https://www.pngitem.com/pimgs/m/75-758538_straight-face-smiling-face-woman-face-animation-hd.png",
+      "photo": "https://www.pngkey.com/png/detail/446-4462649_animated-faces-my-hero-design-clip-art-woman.png",
       "id": 3
     },
     {
       "name": "Angels in America",
-      "genre": "Drama",
+      "author": "Tony Kushner",
       "release": 1991,
       "vote": 4,
       "cover": "https://upload.wikimedia.org/wikipedia/en/f/f1/Angels_in_America%2C_Millennium_Approaches_%281993%29_poster.jpg",
       "info": "https://en.wikipedia.org/wiki/Angels_in_America",
       "photo": "https://lh3.googleusercontent.com/proxy/6kJVQelDhunsuq3NyTXysoo2HA1fbYuVaPo7ht-auFwzoLVux-8zosoGJD_RyeqdAM9_mVnQLHlBRMNs1HxThmXKJpcEn-ypiAeL_Ozb4LCDCIiAFA",
       "id": 4
+    },
+    {
+      "name": "df",
+      "author": "dfg",
+      "release": "dfg",
+      "vote": 1,
+      "cover": "",
+      "info": "dfg",
+      "photo": "https://diamond-lifts.com/wp-content/uploads/2018/12/65de655460ad0c9bff6af468b33892a4.jpg",
+      "id": 5
     }
   ]
 }

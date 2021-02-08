@@ -32,12 +32,16 @@ class App extends Component {
     this.getData();
   }
 
+  componentDidUpdate() {
+    this.getData();
+  }
+
   render = () => {
     return (
       <React.Fragment>
         <Header />
         <UList bookList={this.state.bookList} />
-        <Form />
+        <Form bookList={this.state.bookList}/>
       </React.Fragment>
     );
   }
