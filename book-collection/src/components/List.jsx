@@ -5,13 +5,13 @@ const List = (props) => {
 
   const { book, id } = props;
 
-  // const deleteBook = (id) => {
-  //   // e.preventDefault();
+  const deleteBook = (e) => {
+    e.preventDefault();
 
-  //   fetch('http://localhost:4000/books/'+ id, {
-  //     method: 'DELETE',
-  //   })
-  // }
+    fetch('http://localhost:4000/books/'+ book.id, {
+      method: 'DELETE',
+    })
+  }
 
   return (
     <li key={id}>
@@ -34,12 +34,11 @@ const List = (props) => {
           </div>
         </div>
         <div className="delete">
-          <button >Delete</button>
+          <button onClick={deleteBook}>Delete</button>
         </div>
       </div>
     </li>
   )
 }
-//onClick={deleteBook(book.id)}
 
 export default List;
