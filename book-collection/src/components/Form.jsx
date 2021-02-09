@@ -28,7 +28,7 @@ const Form = (props) => {
     if (name === "" || author === "" || release === "" || info === "" || photo === "") {
       alert("Please fill out all the following fields: Book name, author name, release year, more info URL and submission field.");
     } else {
-      fetch('http://localhost:4000/books', {
+      fetch('https://localhost:4000/books', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
