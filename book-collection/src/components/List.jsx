@@ -8,7 +8,7 @@ const List = (props) => {
   const deleteBook = (e) => {
     e.preventDefault();
 
-    fetch('https://localhost:4000/books/' + book.id, {
+    fetch('http://localhost:4000/books/' + book.id, {
       method: 'DELETE',
     })
   }

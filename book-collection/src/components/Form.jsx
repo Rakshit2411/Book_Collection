@@ -28,7 +28,7 @@ const Form = (props) => {
     if (name === "" || author === "" || release === "" || info === "" || photo === "") {
       alert("Please fill out all the following fields: Book name, author name, release year, more info URL and submission field.");
     } else {
-      fetch('https://localhost:4000/books', {
+      fetch('http://localhost:4000/books', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Form = (props) => {
               <option value="https://www.pngkey.com/png/detail/446-4462649_animated-faces-my-hero-design-clip-art-woman.png">User-1</option>
               <option value="https://diamond-lifts.com/wp-content/uploads/2018/12/65de655460ad0c9bff6af468b33892a4.jpg">User-2</option>
               <option value="https://www.pngitem.com/pimgs/m/75-758538_straight-face-smiling-face-woman-face-animation-hd.png">User-3</option>
-              <option value="https://lh3.googleusercontent.com/proxy/VLfQ7maxDMNcAlmPL-eqL_SHYEQ7SoqIbIZWmE2Mw7RM0rr7KnOKaxuJgH2StlabG-eRl6oZ-lXeDLeP4Vb6bTDsiPVc5btOkvbulXkzJNXcZ79Fqg">User-4</option>
+              <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJqFSrmhrvCq_EjdNY_ToU6NKt-SlbLxkmDg&usqp=CAU">User-4</option>
             </select>
             <button >Submit</button>
           </form>

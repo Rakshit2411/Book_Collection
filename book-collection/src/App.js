@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   getData() {
-    fetch('https://localhost:4000/books')
+    fetch('http://localhost:4000/books')
       .then((response) => { return response.json() })
       .then(data => this.handleData(data))
       .catch(err => console.log(err))
