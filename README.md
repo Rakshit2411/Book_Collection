@@ -3,6 +3,7 @@
 ## Book Collection App
 
 ### Link of deployed site:-
+To use this site you need to ren server on your device. To run the server open a terminal in this folder and run command: *json-server --watch --port 4000 db.json* and then open the site. If it is not showing anything with form, reload the page.
 
 https://60221002aad3834353ac8675--thirsty-darwin-4f30e1.netlify.app
 
