@@ -13,12 +13,25 @@ class App extends Component {
     }
 
     this.handleData = this.handleData.bind(this);
+    this.voteCount = this.voteCount.bind(this);
   }
 
   handleData(books) {
     this.setState({
       bookList: books
     });
+  }
+
+
+  voteCount(bookId) {
+    this.setState({
+      bookList: this.state.bookList.map(book => {
+        if (book.id === bookId) {
+          book.vote = book.vote + 1;
+        }
+        return book;
+      })
+    })
   }
 
   getData() {
@@ -32,29 +45,19 @@ class App extends Component {
     this.getData();
   }
 
-  componentDidUpdate() {
-    this.getData();
+  componentWillUnmount() {
+    this.voteCount();
   }
 
   render = () => {
     return (
       <React.Fragment>
         <Header />
-        <UList bookList={this.state.bookList} />
-        <Form bookList={this.state.bookList}/>
+        <UList bookList={this.state.bookList} onChange={this.voteCount} />
+        <Form bookList={this.state.bookList} getData={() => this.getData} />
       </React.Fragment>
     );
   }
-  // ,
-  //   {
-  //     "name": "Jurassic Park",
-  //     "genre": "Science fiction novel",
-  //     "release": 1990,
-  //     "vote": 5,
-  //     "cover": "https://upload.wikimedia.org/wikipedia/en/3/33/Jurassicpark.jpg",
-  //     "info": "https://en.wikipedia.org/wiki/Jurassic_Park_(novel)",
-  //     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/MichaelCrichton_2.jpg/330px-MichaelCrichton_2.jpg"
-  //   }
 }
 
 export default App;

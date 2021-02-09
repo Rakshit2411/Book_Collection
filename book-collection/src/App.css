@@ -118,16 +118,6 @@ input, select{
   border-radius: 15px;
 }
 
-select:required:invalid {
-  color: #666;
-}
-option {
-  color: #000;
-}
-
-.default{
-  opacity: 50%;
-}
 form button{
   width: 80%;
   height: 70px;

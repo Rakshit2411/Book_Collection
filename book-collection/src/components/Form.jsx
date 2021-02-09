@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import noImage from './image-not-available.jpg';
+import React, { Component, useState } from 'react';
+import List from './List';
 
 const Form = (props) => {
 
-  const { bookList } = props;
+  const { bookList, getData } = props;
   let count = 0;
 
   bookList.forEach(element => {
     count += 1;
   });
-
 
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
@@ -25,16 +24,21 @@ const Form = (props) => {
     e.preventDefault();
 
     let newBook = { name, author, release, vote, cover, info, photo, id };
-    console.log(newBook);
-    fetch('http://localhost:4000/books', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newBook)
-    })
 
-   document.querySelector(".form-fields").reset();
+    if (name === "" || author === "" || release === "" || info === "" || photo === "") {
+      alert("Please fill out all the following fields: Book name, author name, release year, more info URL and submission field.");
+    } else {
+      fetch('http://localhost:4000/books', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newBook)
+      })
+      getData();
+
+      document.querySelector(".form-fields").reset();
+    }
   }
 
   return (
@@ -42,20 +46,20 @@ const Form = (props) => {
       <section>
         <h1>Add a new book</h1>
         <div>
-          <form className="form-fields">
-            <input type="text" placeholder="Book Name" required onChange={(e) => { setName(e.target.value) }} />
-            <input type="text" placeholder="Author Name" required onChange={(e) => { setAuthor(e.target.value) }} />
-            <input type="text" placeholder="Release Year" required onChange={(e) => { setRelease(e.target.value) }} />
+          <form className="form-fields" onSubmit={sendNewData}>
+            <input type="text" placeholder="Book Name" onChange={(e) => { setName(e.target.value) }} required />
+            <input type="text" placeholder="Author Name" onChange={(e) => { setAuthor(e.target.value) }} required />
+            <input type="text" placeholder="Release Year" onChange={(e) => { setRelease(e.target.value) }} required />
             <input type="text" placeholder="Cover URL" onChange={(e) => { setCover(e.target.value) }} />
-            <input type="text" placeholder="More info URL" required onChange={(e) => { setInfo(e.target.value) }} />
-            <select type="text" required onChange={(e) => { setPhoto(e.target.value) }}>
-              <option value={noImage} >Submitted by:</option>
+            <input type="text" placeholder="More info URL" onChange={(e) => { setInfo(e.target.value) }} required />
+            <select type="text" onChange={(e) => { setPhoto(e.target.value) }} required >
+              <option value="" >Submitted by:</option>
               <option value="https://www.pngkey.com/png/detail/446-4462649_animated-faces-my-hero-design-clip-art-woman.png">User-1</option>
               <option value="https://diamond-lifts.com/wp-content/uploads/2018/12/65de655460ad0c9bff6af468b33892a4.jpg">User-2</option>
               <option value="https://www.pngitem.com/pimgs/m/75-758538_straight-face-smiling-face-woman-face-animation-hd.png">User-3</option>
-              <option value="https://lh3.googleusercontent.com/proxy/6kJVQelDhunsuq3NyTXysoo2HA1fbYuVaPo7ht-auFwzoLVux-8zosoGJD_RyeqdAM9_mVnQLHlBRMNs1HxThmXKJpcEn-ypiAeL_Ozb4LCDCIiAFA">User-4</option>
+              <option value="https://lh3.googleusercontent.com/proxy/VLfQ7maxDMNcAlmPL-eqL_SHYEQ7SoqIbIZWmE2Mw7RM0rr7KnOKaxuJgH2StlabG-eRl6oZ-lXeDLeP4Vb6bTDsiPVc5btOkvbulXkzJNXcZ79Fqg">User-4</option>
             </select>
-            <button onClick={sendNewData}>Submit</button>
+            <button >Submit</button>
           </form>
         </div>
       </section>
